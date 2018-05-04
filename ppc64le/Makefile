@@ -1,2 +1,2 @@
 CDO_ENV = BUG_STRUCT_SIZE=24 EX_STRUCT_SIZE=8 FIXUP_STRUCT_SIZE=48
-include ../Makefile.include
+include ../../Makefile.include
