@@ -1,0 +1,33 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t bpf_xdp_link_release
+# 0000000000000000 t __dev_change_flags
+# 0000000000000000 t __dev_change_net_namespace
+# 0000000000000000 t dev_change_xdp_fd
+# 0000000000000000 t __dev_set_allmulti
+# 0000000000000000 t __dev_set_promiscuity
+# 0000000000000000 t dev_xdp_attach
+# 0000000000000000 t flush_all_backlogs
+# 0000000000000000 t free_netdev
+# 0000000000000000 t netdev_has_any_upper_dev
+# 0000000000000000 t __netdev_has_upper_dev
+# 0000000000000000 t netdev_has_upper_dev
+# 0000000000000000 t netdev_lower_state_changed
+# 0000000000000000 t netdev_master_upper_dev_get
+# 0000000000000000 t __netdev_update_features
+# 0000000000000000 t __netdev_upper_dev_link
+# 0000000000000000 t __netdev_upper_dev_unlink
+# 0000000000000000 t __netif_receive_skb_core.constprop.0
+# 0000000000000000 t register_netdevice
+# 0000000000000000 T __s390_indirect_jump_r1
+# 0000000000000000 T __s390_indirect_jump_r14
+# 0000000000000000 T __s390_indirect_jump_r3
+# 0000000000000000 T __s390_indirect_jump_r4
+# 0000000000000000 T __s390_indirect_jump_r6
+# 0000000000000000 T __s390_indirect_jump_r7
+# 0000000000000000 T __s390_indirect_jump_r8
+# 0000000000000000 T __s390_indirect_jump_r9
+# 0000000000000000 t unregister_netdevice_many
+# 0000000000000000 t unregister_netdevice_queue
+assert_num_funcs 29
