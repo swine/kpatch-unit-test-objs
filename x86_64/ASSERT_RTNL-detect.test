@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t __dev_get_by_flags
+# 0000000000000000 t __dev_get_by_flags.cold
+assert_num_funcs 2
