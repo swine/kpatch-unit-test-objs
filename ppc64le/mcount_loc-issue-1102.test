@@ -1,19 +1,14 @@
 #!/bin/bash
 
-# % objdump -j __mcount_loc -Dr mcount_loc-issue-1102.OUTPUT.o
+# Verify an __mcount_loc relocation for netlbl_catmap_getlong:
 #
-# mcount_loc-issue-1102.OUTPUT.o:     file format elf64-powerpcle
+# % readelf --wide --relocs mcount_loc-issue-1102.OUTPUT.o | \
+#       awk '/\.rela__mcount_loc/' RS="\n\n" ORS="\n\n"
 #
-#
-# Disassembly of section __mcount_loc:
-#
-# 0000000000000000 <__mcount_loc>:
-#         ...
-# 	                        0: R_PPC64_ADDR64       netlbl_catmap_getlong+0x4
-#
+# Relocation section '.rela__mcount_loc' at offset 0x14d0 contains 1 entry:
+#     Offset             Info             Type               Symbol's Value  Symbol's Name + Addend
+# 0000000000000000  0000000200000026 R_PPC64_ADDR64         0000000000000000 netlbl_catmap_getlong + 4
 
-rela=$(objdump -j __mcount_loc -Dr mcount_loc-issue-1102.OUTPUT.o 2>/dev/null | \
-       awk '$2=="R_PPC64_ADDR64" && $3=="netlbl_catmap_getlong+0x4" { print $3 }' 2>/dev/null)
-
-[[ $rela == "netlbl_catmap_getlong+0x4" ]] && exit 0
-exit 1
+readelf --wide --relocs mcount_loc-issue-1102.OUTPUT.o 2>/dev/null | \
+    awk '/\.rela__mcount_loc/' RS="\n\n" ORS="\n\n" | \
+    grep -q '\<R_PPC64_ADDR64\>.*\<netlbl_catmap_getlong\> + 4$'
