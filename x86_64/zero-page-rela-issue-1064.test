@@ -7,8 +7,8 @@ assert_num_funcs 1
 TESTFILE=$(basename "$0")
 OUTFILE=${TESTFILE%.test}.OUTPUT.o
 
-# If the issue #1064 is fixed, 'objdump -r <output_binary.o>' should show
-# R_X86_64_64 relocation like 'empty_zero_page+0x80000000'.
+# If the issue #1064 is fixed, there should be a
+# R_X86_64_64 relocation like 'empty_zero_page + 80000000'.
 # If the issue is present, there will be something like
-# 'empty_zero_page-0x80000000' there instead.
-objdump -r ${OUTFILE} | grep -q -E 'R_X86_64_64\s+empty_zero_page\+0x0*80000000'
+# 'empty_zero_page - 80000000' there instead.
+readelf --wide --relocs zero-page-rela-issue-1064.OUTPUT.o | grep -q -e '\<R_X86_64_64\>.*\<empty_zero_page\> + 80000000$'
