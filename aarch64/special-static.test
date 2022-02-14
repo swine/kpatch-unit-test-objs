@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t copy_signal
+# 0000000000000000 T kpatch_foo
+assert_num_funcs 2

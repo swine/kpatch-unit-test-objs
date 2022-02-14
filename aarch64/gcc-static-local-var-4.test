@@ -1,0 +1,8 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t aio_free_ring
+# 0000000000000000 t aio_setup_ring
+# 0000000000000000 T kpatch_aio_foo
+# 0000000000000000 t put_aio_ring_file
+assert_num_funcs 4

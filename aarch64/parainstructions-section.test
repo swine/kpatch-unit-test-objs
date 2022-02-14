@@ -1,0 +1,15 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t proc_alloc_inum
+# 0000000000000000 t proc_create
+# 0000000000000000 t proc_create_data
+# 0000000000000000 t proc_create_mount_point
+# 0000000000000000 t proc_create_seq_private
+# 0000000000000000 t proc_create_single_data
+# 0000000000000000 t _proc_mkdir
+# 0000000000000000 t proc_mkdir
+# 0000000000000000 t proc_mkdir_data
+# 0000000000000000 t proc_mkdir_mode
+# 0000000000000000 t proc_register
+assert_num_funcs 11

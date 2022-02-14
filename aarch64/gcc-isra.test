@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t proc_sys_poll_notify
+# 0000000000000000 t system_uses_lse_atomics
+assert_num_funcs 2

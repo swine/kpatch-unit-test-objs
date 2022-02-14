@@ -1,0 +1,5 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t filldir
+assert_num_funcs 1

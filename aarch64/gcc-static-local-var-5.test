@@ -1,0 +1,13 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t audit_log_config_change
+# 0000000000000000 t audit_log_end
+# 0000000000000000 t audit_log_end.part.0
+# 0000000000000000 t audit_log_feature_change
+# 0000000000000000 t audit_log_path_denied
+# 0000000000000000 t audit_log_start.part.0
+# 0000000000000000 t audit_receive_msg
+# 0000000000000000 T kpatch_audit_check
+# 0000000000000000 T kpatch_audit_foo
+assert_num_funcs 9

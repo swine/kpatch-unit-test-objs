@@ -1,0 +1,5 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t __nf_ip6_route
+assert_num_funcs 1

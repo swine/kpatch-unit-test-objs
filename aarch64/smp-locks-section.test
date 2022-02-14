@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t __tty_buffer_request_room
+# 0000000000000000 t tty_buffer_request_room
+assert_num_funcs 2
