@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t read_block_for_search
+# 0000000000000000 t read_block_for_search.cold
+assert_num_funcs 2
