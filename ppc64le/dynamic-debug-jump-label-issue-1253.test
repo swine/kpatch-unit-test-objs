@@ -1,0 +1,8 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000008 t push_node_left
+assert_num_funcs 1
+
+# ensure the '__dyndbg' section gets included
+readelf --wide --sections dynamic-debug-jump-label-issue-1253.OUTPUT.o | grep -q "__dyndbg"

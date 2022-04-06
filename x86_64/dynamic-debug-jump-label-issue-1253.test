@@ -1,0 +1,9 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# 0000000000000000 t push_node_left
+# 0000000000000000 t push_node_left.cold
+assert_num_funcs 2
+
+# ensure there are no undefined section symbols
+! readelf --wide --symbols dynamic-debug-jump-label-issue-1253.OUTPUT.o | grep -qe "SECTION.*UND"
