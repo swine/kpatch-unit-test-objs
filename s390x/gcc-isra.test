@@ -1,10 +1,6 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm gcc-isra.OUTPUT.o | grep -i " t "
 # 0000000000000000 t proc_sys_poll_notify
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r10
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r4
-# 0000000000000000 T __s390_indirect_jump_r5
-assert_num_funcs 6
+assert_num_funcs 1

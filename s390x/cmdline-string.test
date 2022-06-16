@@ -1,6 +1,6 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm cmdline-string.OUTPUT.o | grep -i " t "
 # 0000000000000000 t cmdline_proc_show
-# 0000000000000000 T __s390_indirect_jump_r14
-assert_num_funcs 2
+assert_num_funcs 1

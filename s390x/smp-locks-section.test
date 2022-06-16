@@ -1,9 +1,8 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r14
+# $ nm smp-locks-section.OUTPUT.o | grep -i " t "
 # 0000000000000000 t __tty_buffer_request_room
 # 0000000000000000 t tty_buffer_request_room
 # 0000000000000000 t __tty_insert_flip_char
-assert_num_funcs 5
+assert_num_funcs 3
