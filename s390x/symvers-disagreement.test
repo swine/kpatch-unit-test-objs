@@ -1,12 +1,12 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm symvers-disagreement.OUTPUT.o | grep -i " t "
 # 0000000000000000 t dev_err_probe
 # 0000000000000000 t device_add
 # 0000000000000000 t device_create_release
 # 0000000000000000 t device_link_add
 # 0000000000000000 t __device_link_del
-# 0000000000000000 t device_links_check_suppliers
 # 0000000000000000 t device_move
 # 0000000000000000 t device_rename
 # 0000000000000000 t devices_kset_move_last
@@ -14,12 +14,7 @@ source $KPATCH_TEST_LIBRARY
 # 0000000000000000 t devm_attr_group_remove
 # 0000000000000000 t devm_attr_groups_remove
 # 0000000000000000 t dev_uevent
-# 0000000000000000 t fw_devlink_create_devlink
 # 0000000000000000 t fw_devlink_relax_link
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r10
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r3
-# 0000000000000000 T __s390_indirect_jump_r8
-# 0000000000000000 T __s390_indirect_jump_r9
-assert_num_funcs 21
+# 0000000000000000 t fwnode_link_add
+# 0000000000000000 t __fwnode_link_del
+assert_num_funcs 15

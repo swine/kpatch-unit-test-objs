@@ -1,11 +1,9 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm gcc-static-local-var-4.OUTPUT.o | grep -i " t "
 # 0000000000000000 t aio_free_ring
 # 0000000000000000 t aio_setup_ring
 # 0000000000000000 T kpatch_aio_foo
 # 0000000000000000 t put_aio_ring_file
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r4
-assert_num_funcs 7
+assert_num_funcs 4

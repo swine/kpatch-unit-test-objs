@@ -1,8 +1,6 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm tracepoints-section.OUTPUT.o | grep -i " t "
 # 0000000000000000 t run_timer_softirq
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r7
-assert_num_funcs 4
+assert_num_funcs 1

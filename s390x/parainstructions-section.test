@@ -1,6 +1,7 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm parainstructions-section.OUTPUT.o | grep -i " t "
 # 0000000000000000 t proc_alloc_inum
 # 0000000000000000 t proc_create
 # 0000000000000000 t proc_create_data
@@ -13,7 +14,4 @@ source $KPATCH_TEST_LIBRARY
 # 0000000000000000 t proc_mkdir_mode
 # 0000000000000000 t proc_register
 # 0000000000000000 t __raw_write_lock.constprop.0
-# 0000000000000000 T __s390_indirect_jump_r1
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r8
-assert_num_funcs 15
+assert_num_funcs 12

@@ -1,0 +1,6 @@
+#!/bin/bash
+source $KPATCH_TEST_LIBRARY
+
+# $ nm line-detect-issue-1253.OUTPUT.o | grep -i " t "
+# 0000000000000000 t read_block_for_search
+assert_num_funcs 1

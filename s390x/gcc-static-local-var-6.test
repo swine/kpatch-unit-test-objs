@@ -1,8 +1,6 @@
 #!/bin/bash
 source $KPATCH_TEST_LIBRARY
 
+# $ nm gcc-static-local-var-6.OUTPUT.o | grep -i " t "
 # 0000000000000000 t __nf_ip6_route
-# 0000000000000000 T __s390_indirect_jump_r13
-# 0000000000000000 T __s390_indirect_jump_r14
-# 0000000000000000 T __s390_indirect_jump_r9
-assert_num_funcs 4
+assert_num_funcs 1
